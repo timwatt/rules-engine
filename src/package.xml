@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+    	<members>ContainsOperator</members>
+    	<members>DoesNotContainOperator</members>
+    	<members>EqualsOperator</members>
+    	<members>ExcludesOperator</members>
+    	<members>GreaterThanEqualsOperator</members>
+    	<members>GreaterThanOperator</members>
+    	<members>IncludesOperator</members>
+    	<members>LessThanEqualsOperator</members>
+    	<members>LessThanOperator</members>
+    	<members>NotEqualsOperator</members>
+    	<members>Operator</members>
+    	<members>OperatorBuilder</members>
+    	<members>Rule</members>
+    	<members>RuleEntryController</members>
+    	<members>RulesEngine</members>
+    	<members>RuleSOQLBuilder</members>
+    	<members>StartsWithOperator</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>RuleEntry</members>
+        <name>ApexPage</name>
+    </types>
+    <types>
+        <members>jqueryui_zip</members>
+        <name>StaticResource</name>
+    </types> 
+   <types>
+        <members>Candidate_Criteria__c</members>
+        <members>Criteria__c</members>
+        <members>Criteria_Values__c</members>
+        <members>Rule__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+      <members>Field</members>
+        <members>Criteria_Detail</members>
+        <members>Relationship</members>
+        <members>Operator_Contains</members>
+        <members>Operator_Does_Not_Contain</members>
+        <members>Operator_Equals</members>
+        <members>Operator_Excludes</members>
+        <members>Operator_Greater_Than</members>
+        <members>Operator_Greater_Than_Equals</members>
+        <members>Operator_Includes</members>
+        <members>*Operator_Less_Than</members>
+        <members>Operator_Less_Than_Equals</members>
+        <members>Operator_Not_Equal</members>
+        <members>Operator_Starts_With</members>
+        <!--<members>*</members>-->
+        <name>CustomLabel</name>
+    </types>
+  - <types>
+        <members>Candidate_Criteria__c-Candidate Criteria Layout</members>
+        <members>Criteria__c-Criteria Layout</members>
+       	<members>Criteria_Values__c-Criteria Value Layout</members>
+       	<members>Rule__c-Rule Layout</members>
+        <name>Layout</name>
+    </types>
+    <version>25.0</version>
+</Package>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Criteria_Detail</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Criteria Detail</shortDescription>
+        <value>Criteria Detail</value>
+    </labels>
+    <labels>
+        <fullName>Field</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Field</shortDescription>
+        <value>Field</value>
+    </labels>
+    <labels>
+        <fullName>Operator_Contains</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Operator Contains</shortDescription>
+        <value>contains</value>
+    </labels>
+    <labels>
+        <fullName>Operator_Does_Not_Contain</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Operator Does Not Contain</shortDescription>
+        <value>does not contain</value>
+    </labels>
+    <labels>
+        <fullName>Operator_Equals</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Operator: Equals</shortDescription>
+        <value>equals</value>
+    </labels>
+    <labels>
+        <fullName>Operator_Excludes</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Operator Excludes</shortDescription>
+        <value>excludes</value>
+    </labels>
+    <labels>
+        <fullName>Operator_Greater_Than</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Operator Greater Than</shortDescription>
+        <value>greater than</value>
+    </labels>
+    <labels>
+        <fullName>Operator_Greater_Than_Equals</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Operator Greater Than Equals</shortDescription>
+        <value>greater than or equal to</value>
+    </labels>
+    <labels>
+        <fullName>Operator_Includes</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Operator Includes</shortDescription>
+        <value>includes</value>
+    </labels>
+    <labels>
+        <fullName>Operator_Less_Than_Equals</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Operator Less Than Equals</shortDescription>
+        <value>less than or equal to</value>
+    </labels>
+    <labels>
+        <fullName>Operator_Not_Equal</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Operator_Not_Equal</shortDescription>
+        <value>does not equal</value>
+    </labels>
+    <labels>
+        <fullName>Operator_Starts_With</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Operator Starts With</shortDescription>
+        <value>starts with</value>
+    </labels>
+    <labels>
+        <fullName>Relationship</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Relationship</shortDescription>
+        <value>Relationship</value>
+    </labels>
+</CustomLabels>
