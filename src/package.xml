@@ -18,6 +18,9 @@
     	<members>RulesEngine</members>
     	<members>RuleSOQLBuilder</members>
     	<members>StartsWithOperator</members>
+        <members>SOQLBuilder</members>
+         <members>SchemaManager</members>
+          <members>sCollection</members>
         <name>ApexClass</name>
     </types>
     <types>
