@@ -50,7 +50,7 @@
         <members>Operator_Greater_Than</members>
         <members>Operator_Greater_Than_Equals</members>
         <members>Operator_Includes</members>
-        <members>*Operator_Less_Than</members>
+        <members>Operator_Less_Than</members>
         <members>Operator_Less_Than_Equals</members>
         <members>Operator_Not_Equal</members>
         <members>Operator_Starts_With</members>
