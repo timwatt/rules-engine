@@ -52,7 +52,7 @@ public with sharing class RuleEntryController {
       set {mRule=value;}
     }
     public RuleSoqlBuilder getRuleSOQLBuilder() {
-        Rule ruleObj = Rule.GenerateRuleFromSObject(this.rule);
+        Rule ruleObj = Rule.GenerateRuleFromSObject(this.ruleRecord);
         RuleSoqlBuilder sb = new RuleSoqlBuilder(ruleObj);
         sb.addRuleCriteria();
         return sb;
