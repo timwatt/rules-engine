@@ -1,7 +1,7 @@
 public class RulesEngine{
     SObjectType objType;
     String objName;
-    List<Rule> rules; 
+    List<Rule> rules;
     Sobject sourceRecord;
     Id sourceRecordId;
 
@@ -11,11 +11,11 @@ public class RulesEngine{
         MatchOnly
     }
     private RuleType rType;
-   
+
     public RulesEngine(SObjectType sobjType, string RType) {
         this.objType = sobjType;
         this.objName = sobjType.getDescribe().getLocalName();
-        this.rType = (RType=='Scoring' ? RuleType.Scoring : RuleType.Assignment);     
+        this.rType = (RType=='Scoring' ? RuleType.Scoring : RuleType.Assignment);
         this.rules = Rule.GenerateRules(sobjType);
     }
     public RulesEngine(Sobject sourceRecord) {
@@ -38,7 +38,7 @@ public class RulesEngine{
 
     public List<Rule> getListOfMatchingRules(List<Rule> rules) {
        List<Rule> passingRules = new List<Rule>();
-      
+
        if (rules !=null && Rules.IsEmpty()==false) {
             SOQLBuilder sb = new RuleSOQLBuilder(rules);
             sb.addCriteria('Id = :sourceRecordId', true);
@@ -56,14 +56,14 @@ public class RulesEngine{
         Set<Id> ids = assigneeList.keyset();
         sb.addCriteria('Id in :ids' , true);
         List<SObject> relatedRecords = Database.query(sb.getSOQL());
-        
+
         for (SObject obj:assigneeList.values()) {
 
             if ( rType == RuleType.Scoring) {
                 //scoring
                 Double totalScore = 0;
                 for (Rule r : rules) {
-                     Rule.RuleProcessingResult result = r.executeRule(obj,getRecordFromList(obj, relatedRecords)); 
+                     Rule.RuleProcessingResult result = r.executeRule(obj,getRecordFromList(obj, relatedRecords));
                      totalScore += result.Score;
                     if (r.ReturnScore) {
                          obj.put(r.outputField,totalScore);
@@ -76,7 +76,7 @@ public class RulesEngine{
                 for (Rule r : rules) {
                     boolean isAssigned = false;
                     //TODO: Assignment needs to take into account the rule score to determine which rule wins
-                    Rule.RuleProcessingResult result = r.executeRule(obj,getRecordFromList(obj, relatedRecords)); 
+                    Rule.RuleProcessingResult result = r.executeRule(obj,getRecordFromList(obj, relatedRecords));
                     if (isAssigned == false && result.hasPassed) {
                        if (r.outputField!=null) {
                             if (r.ReturnScore) {
@@ -86,7 +86,7 @@ public class RulesEngine{
                             }
                         }
                         if (result.candidates != null && r.CandidateOutputField!=null ) {
-                            obj.put(r.CandidateOutputField, result.winningCandidate.record.id);
+                            obj.put(r.outputField, result.winningCandidate.record.get(r.CandidateOutputField));
                         }
                         isAssigned=true;
                     }
@@ -95,5 +95,5 @@ public class RulesEngine{
         }
        return assigneeList.values();
     }
-    
+
   }
