@@ -65,7 +65,7 @@
         <name>Layout</name>
     </types>
     <types>
-        <member>Rule__c</member>
+        <members>Rule__c</members>
         <name>CustomTab</name>
     </types>
     <version>25.0</version>
