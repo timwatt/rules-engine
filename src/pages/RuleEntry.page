@@ -5,7 +5,7 @@
     <style>
         #new-criteria {background-color:white;}
     </style>
-    <script> 
+    <script>
         var j$ = jQuery.noConflict();
         j$(function() {
             j$('#new-criteria')
@@ -25,12 +25,12 @@
             }
             });
         });
-       
+
         function toggleConfiguration() {
           var c = j$('#new-criteria');
           if (c.dialog('isOpen')==false) {
              c.dialog('open');
-           } else { 
+           } else {
              c.dialog('close');
            }
         }
@@ -38,17 +38,17 @@
             j$('.loadingField').attr("disabled", "disabled");
         }
         function enableField() {
-               j$('.loadingField').removeAttr("disabled");    
+               j$('.loadingField').removeAttr("disabled");
         }
     </script>
     <apex:form >
        <apex:detail relatedList="false" inlineEdit="true"/>
-         
+
     <apex:pageBlock title="Criteria">
         <apex:pageBlockButtons >
           <a href="javascript:void;" onclick="toggleConfiguration();" class="btn" style="text-decoration:none;">New Criteria</a>
         </apex:pageBlockButtons>
-        <apex:pageBlockTable id="ct" value="{!Rule.criteria__r}" var="c">
+        <apex:pageBlockTable id="ct" value="{!RuleRecord.criteria__r}" var="c">
             <apex:column headerValue="Action">
                 <apex:commandLink action="{!doNothing}" value="Edit" oncomplete="toggleConfiguration();" reRender="criteria-form">
                     <apex:param name="CriteriaId" value="{!c.id}"/>
@@ -57,16 +57,16 @@
                 <apex:commandLink action="{!deleteCriteria}" value="Delete"  reRender="ct">
                     <apex:param name="DelId" value="{!c.id}"/>
                 </apex:commandLink>
-          
+
             </apex:column>
             <apex:column headerValue="Field">{!IF(isblank(c.Relationship_Name__c),c.Field_Label__c,c.Relationship_Name__c & "." & c.Field_Label__c)}</apex:column>
             <apex:column value="{!c.Operator__c}"/>
         </apex:pageBlockTable>
-    </apex:pageBlock>   
-     </apex:form>  
+    </apex:pageBlock>
+     </apex:form>
     <div id="new-criteria">
-        <apex:form id="criteria-form">  
-        <apex:actionFunction action="{!saveCriteria}" name="jsSaveCriteria"  reRender="ct"/>  
+        <apex:form id="criteria-form">
+        <apex:actionFunction action="{!saveCriteria}" name="jsSaveCriteria"  reRender="ct"/>
             <apex:pageMessages />
             <apex:panelGrid columns="2">
                 <apex:outputLabel value="{!$Label.Relationship}"/>
