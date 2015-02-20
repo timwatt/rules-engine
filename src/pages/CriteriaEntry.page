@@ -1,0 +1,35 @@
+<apex:page standardController="Criteria__c" extensions="RuleEntryController">
+ <apex:sectionHeader title="{!$ObjectType.Criteria__c.Label}" subTitle="{!Criteria__c.Name}"/>
+ <apex:form id="theForm">
+ <apex:inputHidden value="{!Criteria__c.Rule__c}"/>
+ <apex:pageMessages />
+ <apex:pageBlock mode="mainDetail" title="{!$Label.Criteria_Detail}">
+ <apex:pageBlockButtons >
+     <apex:commandButton value="{!$Label.site.save}" action="{!SaveCriteria}"/>
+     <apex:commandButton value="{!$Label.site.cancel}" action="{!Cancel}"/>
+ </apex:pageBlockButtons>
+ <apex:pageBlockSection columns="2">
+  <apex:inputField value="{!Criteria.Name}"/>
+   <apex:outputField value="{!Criteria.Rule__c}"/>
+  <apex:pageBlockSectionItem >
+   <apex:outputLabel value="{!$Label.Relationship}"/>
+   <apex:selectList size="1" value="{!Criteria.Relationship_Name__c}" >
+      <apex:selectOptions value="{!RelationshipOptions}"/>
+      <apex:actionSupport event="onchange" reRender="theField"/>
+  </apex:selectList>
+  </apex:pageBlockSectionItem>
+  <apex:pageBlockSectionItem >
+  <apex:outputLabel value="{!$Label.Field}"/>
+   <apex:selectList id="theField" size="1" value="{!Criteria.Field__c}" >
+      <apex:selectOptions value="{!FieldOptions}"/>
+  </apex:selectList>
+  </apex:pageBlockSectionItem>
+    <apex:inputField value="{!Criteria.Operator__c}"/>
+ 
+ </apex:pageBlockSection>
+ 
+  </apex:pageBlock>
+   </apex:form>
+  <apex:relatedList list="Criteria_Values__r"/>
+ 
+</apex:page>

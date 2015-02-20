@@ -18,19 +18,20 @@
     	<members>RulesEngine</members>
     	<members>RuleSOQLBuilder</members>
     	<members>StartsWithOperator</members>
-        <members>SOQLBuilder</members>
-         <members>SchemaManager</members>
-          <members>sCollection</members>
-        <name>ApexClass</name>
+      <members>SOQLBuilder</members>
+      <members>SchemaManager</members>
+      <members>sCollection</members>
+      <name>ApexClass</name>
     </types>
     <types>
         <members>RuleEntry</members>
+        <members>CriteriaEntry</members>
         <name>ApexPage</name>
     </types>
     <types>
         <members>jqueryui_zip</members>
         <name>StaticResource</name>
-    </types> 
+    </types>
    <types>
         <members>Candidate_Criteria__c</members>
         <members>Criteria__c</members>

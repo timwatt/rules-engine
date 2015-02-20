@@ -64,6 +64,13 @@
         <value>includes</value>
     </labels>
     <labels>
+        <fullName>Operator_Less_Than</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Operator Less Than</shortDescription>
+        <value>less than</value>
+    </labels>
+    <labels>
         <fullName>Operator_Less_Than_Equals</fullName>
         <language>en_US</language>
         <protected>false</protected>
