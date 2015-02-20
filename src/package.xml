@@ -64,5 +64,9 @@
        	<members>Rule__c-Rule Layout</members>
         <name>Layout</name>
     </types>
+    <types>
+        <member>Rule__c</member>
+        <name>CustomTab</member>
+    </types>
     <version>25.0</version>
 </Package>
