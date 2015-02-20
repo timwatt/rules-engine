@@ -81,7 +81,7 @@ public with sharing class RuleEntryController {
                  Relationship_Name__c, Related_Object_Type__c, (select value__c, score__c from criteria_values__r) from Criteria__c where id=:CriteriaId];
                 newCriteriaValue = new Criteria_Values__c();
          } else if (mCriteria==null) {
-            mCriteria = new Criteria__c(Rule__c = Rule.id);
+            mCriteria = new Criteria__c(Rule__c = RuleRecord.id);
              newCriteriaValue = new Criteria_Values__c();
          }
 
@@ -102,7 +102,7 @@ public with sharing class RuleEntryController {
            if (Criteria!=null && Criteria.Relationship_Name__c != null && Criteria.Relationship_Name__c !='') {
                 return RelationshipMap.get(Criteria.Relationship_Name__c).getDescribe().getName();
            } else {
-                return Rule.Object__c;
+                return RuleRecord.Object__c;
             }
 
         }
@@ -156,7 +156,7 @@ public with sharing class RuleEntryController {
     public Map<String, Schema.SObjectType> RelationshipMap {
         get {
                 if (mRelationshipMap ==null) {
-                    List<Schema.ChildRelationship> M = GlobalDescribe.get(Rule.Object__c).getDescribe().getChildRelationships();
+                    List<Schema.ChildRelationship> M = GlobalDescribe.get(RuleRecord.Object__c).getDescribe().getChildRelationships();
                     mRelationshipMap= new Map<String, Schema.SObjectType>();
                     for (Schema.ChildRelationship cr : M) {
                        mRelationshipMap.put(cr.getRelationshipName(), cr.getChildSObject());
