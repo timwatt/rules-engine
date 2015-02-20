@@ -41,7 +41,7 @@ public with sharing class RuleEntryController {
     public RuleEntryController(ApexPages.StandardController controller) {
        mController = controller;
     }
-    public Rule__c Rule {
+    public Rule__c RuleRecord {
       get {
           if (mRule ==null && mController!=null && mController.getRecord()!=null) {
               Id ruleId = mController.getRecord().getSobjectType() == Rule__c.sObjectType? mController.getId() : (id)mController.getRecord().get('Rule__c');
@@ -169,7 +169,7 @@ public with sharing class RuleEntryController {
     private transient List<SelectOption> mRelationshipOptions;
     public List<SelectOption> RelationshipOptions {
         get {
-            if (mRelationshipOptions ==null && Rule!=null) {
+            if (mRelationshipOptions ==null && RuleRecord!=null) {
                 mRelationshipOptions = new  List<SelectOption>();
 
                 List<String> fkeys = new List<String>();
